@@ -35,8 +35,48 @@ nest g controller <controllerName>
 nest g resource
 ```
 
+## MongoDB / Mongoose integration
+Within the app main Module, import the MongooseModule and call the forRoot function passing in the connection string to the database.
+Eg 
+```typescript
+...
+import {MongooseModule} from "@nestjs/mongoose";
+
+@Module({
+    imports: [
+        MongooseModule.forRoot('mongodb://root:root@localhost:27017/nest?authSource=admin&directConnection=true'),
+        AssetsModule
+    ],
+    controllers: [AppController],
+    providers: [AppService],
+})
+export class AppModule {
+}
+
+```
+Then within the Assets module or any other module that need access to the database, it is then required to import the MongooseModule and call the forFeature method.
+Then for each schema that you want to use, pass in the entity name and its type defined within the TS class 
+Eg `export const AssetSchema = SchemaFactory.createForClass(Asset);`
+```typescript
+import {MongooseModule} from "@nestjs/mongoose";
+import {Asset, AssetSchema} from "./entities/asset.entity";
+
+@Module({
+    imports: [
+        MongooseModule.forFeature([
+            {name: Asset.name, schema: AssetSchema},
+        ])
+    ],
+    controllers: [AssetsController],
+    providers: [AssetsService],
+})
+export class AssetsModule {
+}
+
+```
+
 ## Dependencies
 ### mongoose
 ```bash
-npm install @nestjs/mongoose mongoose
+  npm install @nestjs/mongoose mongoose
 ```
