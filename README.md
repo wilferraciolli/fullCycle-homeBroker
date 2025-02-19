@@ -19,3 +19,7 @@ Docker - to deploy the app
 ### Use cases ERM
 ![use cases.png](images/03-useCases.png)
 ![04-erm.png](images/04-erm.png)
+
+# DB MongoDB
+To connect to the database, follow this connection string
+`mongodb://admin:admin@localhost:27017/routes?authSource=admin&directConnection=true`
