@@ -31,6 +31,13 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Image server
+It is possible to run a npx command to create a lightweight server to run a folder Eg `imagesFolder` with the following command
+```bash
+npx serve -l tcp://127.0.0.1:9001 ./assets
+```
+
+
 ## nestJS commands
 ```bash
 nest g module <moduleName>

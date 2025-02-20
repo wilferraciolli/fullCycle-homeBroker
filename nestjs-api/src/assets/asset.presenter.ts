@@ -9,7 +9,7 @@ export class AssetPresenter {
       name: this.asset.name,
       symbol: this.asset.symbol,
       price: this.asset.price,
-      image_url: `http://localhost:9000/${this.asset.image}`,
+      image_url: `http://localhost:9001/${this.asset.image}`,
     };
   }
 }
