@@ -2,8 +2,7 @@
 List of microservices to mimic a home broker
 Home broker simulator using nestJS, GoLang, nextJs and docker
 
-GIT code can be found here
-https://github.com/devfullcycle/imersao21
+GIT code can be found [here](https://github.com/devfullcycle/imersao21)
 
 ![01-overview.png](images/01-overview.png)
 

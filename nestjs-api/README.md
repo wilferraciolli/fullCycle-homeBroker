@@ -5,6 +5,10 @@ API used to manager the rest endpoints to the app. It will use Mongo DB as datab
 ![01-endpoints.png](images/01-endpoints.png)
 
 
+# Prereqs
+To have install nest JS on the machine
+To add the `"esModuleInterop": true` property to tsconfig.json file
+
 # Database has the following tables
 ![02-db.png](images/02-db.png)
 
