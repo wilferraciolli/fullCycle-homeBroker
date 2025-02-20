@@ -9,10 +9,12 @@ import { Asset } from '../assets/entities/asset.entity';
 @Injectable()
 export class WalletsService {
   constructor(
-    @InjectModel(Wallet.name) private walletSchema: Model<Wallet>,
+    @InjectModel(Wallet.name)
+    private walletSchema: Model<Wallet>,
     @InjectModel(WalletAsset.name)
     private walletAssetSchema: Model<WalletAsset>,
-    @InjectConnection() private connection: mongoose.Connection,
+    @InjectConnection()
+    private connection: mongoose.Connection,
   ) {}
 
   create(createWalletDto: CreateWalletDto) {
@@ -39,6 +41,7 @@ export class WalletsService {
     assetId: string;
     shares: number;
   }) {
+    // since there are multiple transactions within the same method, then create a session and manage its state so rollback can work properly
     const session = await this.connection.startSession();
     await session.startTransaction();
     try {
@@ -63,6 +66,7 @@ export class WalletsService {
         },
       );
       await session.commitTransaction();
+
       return walletAsset;
     } catch (e) {
       console.error(e);

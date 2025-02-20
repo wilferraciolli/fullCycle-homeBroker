@@ -10,6 +10,7 @@ export class Wallet {
   @Prop({ default: () => crypto.randomUUID() })
   _id: string;
 
+  // get the relationship together when getting this entity
   @Prop({
     type: [mongoose.Schema.Types.String],
     set: (v) => [...new Set(v)],

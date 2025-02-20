@@ -8,6 +8,7 @@ export class WalletPresenter {
     private wallet: Wallet & { assets: (WalletAsset & { asset: Asset })[] },
   ) {}
 
+  // since the entity has the relationship mapped, then merge them together before returning to the client
   toJSON() {
     return {
       _id: this.wallet._id,
