@@ -10,8 +10,6 @@ export default async function MyWalletListPage({
   searchParams: Promise<{ wallet_id: string }>;
 }) {
   const { wallet_id } = await searchParams;
-  console.log('Wallet id ', wallet_id);
-
   if (!wallet_id) {
     return <WalletList/>;
   }
@@ -21,8 +19,6 @@ export default async function MyWalletListPage({
   if (!wallet) {
     return <WalletList/>;
   }
-
-  console.log('Wallet ', wallet);
 
   return (
     <div className="flex flex-col space-y-5 flex-grow">

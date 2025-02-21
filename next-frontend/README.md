@@ -21,6 +21,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Routes
+[wallets to chose from ](http://localhost:3001)
 [main](http://localhost:3001/?wallet_id=5fdd0b84-26af-434d-8244-667bcd3d04dc)
 [assets](http://localhost:3001/assets?wallet_id=5fdd0b84-26af-434d-8244-667bcd3d04dc)
 [asset by symbol](http://localhost:3001/assets/{assetSymbol}?wallet_id=5fdd0b84-26af-434d-8244-667bcd3d04dc)

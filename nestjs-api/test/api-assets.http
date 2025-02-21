@@ -1,0 +1,93 @@
+###
+POST http://localhost:3000/assets
+Content-Type: application/json
+
+{
+  "name": "Amazon",
+  "symbol": "A1",
+  "price": 100,
+  "image": "AMZN.png"
+}
+
+###
+POST http://localhost:3000/assets
+Content-Type: application/json
+
+{
+  "name": "Sales Force",
+  "symbol": "CRM",
+  "price": 200,
+  "image": "CRM.png"
+}
+
+###
+POST http://localhost:3000/assets
+Content-Type: application/json
+
+{
+  "name": "Google",
+  "symbol": "GOOGL",
+  "price": 300,
+  "image": "GOOGL.png"
+}
+
+###
+POST http://localhost:3000/assets
+Content-Type: application/json
+
+{
+  "name": "Coce-Cola",
+  "symbol": "KO",
+  "price": 200,
+  "image": "KO.png"
+}
+
+###
+POST http://localhost:3000/assets
+Content-Type: application/json
+
+{
+  "name": "McDonalds",
+  "symbol": "MCD",
+  "price": 200,
+  "image": "MCD.png"
+}
+
+###
+POST http://localhost:3000/assets
+Content-Type: application/json
+
+{
+  "name": "Mercado Livre",
+  "symbol": "MELI",
+  "price": 200,
+  "image": "MELI.png"
+}
+
+###
+POST http://localhost:3000/assets
+Content-Type: application/json
+
+{
+  "name": "Meta",
+  "symbol": "META",
+  "price": 200,
+  "image": "META.png"
+}
+
+###
+POST http://localhost:3000/assets
+Content-Type: application/json
+
+{
+  "name": "Nvidea",
+  "symbol": "NVDA",
+  "price": 150,
+  "image": "NVDA.png"
+}
+
+###
+GET http://localhost:3000/assets
+
+###
+GET http://localhost:3000/assets/A1
