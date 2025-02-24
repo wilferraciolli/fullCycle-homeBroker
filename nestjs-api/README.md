@@ -37,11 +37,17 @@ It is possible to run a npx command to create a lightweight server to run a fold
 npx serve -l tcp://127.0.0.1:9001 ./assets
 ```
 
+## Websockets
+Each class annotated with @WebSocketGateway() is a websocket server, it can be tested simply by using Postman socket.io to test
+Eg Websocket connection to `ws://localhost:3000` with a payload, then add the message name to the `Ack` field in postman to map which 
+websocket you want to connect to
+![03-websockets.png](images/03-websockets.png)
 
 ## nestJS commands
 ```bash
 nest g module <moduleName>
 nest g controller <controllerName>
+nest g gateway <gatewayName>
 
 nest g resource
 ```
@@ -90,4 +96,10 @@ export class AssetsModule {
 ### mongoose
 ```bash
   npm install @nestjs/mongoose mongoose
+```
+
+### web sockets io
+Install sockets io to use websockets
+```bash
+npm install @nestjs/websockets @nestjs/platform-socket.io 
 ```

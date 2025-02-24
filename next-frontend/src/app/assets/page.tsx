@@ -7,6 +7,7 @@ import {
   TableHeadCell,
   TableRow,
 } from "flowbite-react";
+import Link from 'next/link';
 import { AssetShow } from "../../components/AssetShow";
 import { WalletList } from "../../components/WalletList";
 import { getAssets, getMyWallet } from "../../queries/queries";
@@ -52,7 +53,14 @@ export default async function AssetsListPage({
                 </TableCell>
                 <TableCell>R$ {asset.price}</TableCell>
                 <TableCell>
-                  <Button color="light">Comprar/vender</Button>
+                  <Button
+                    className="w-fit"
+                    color="light"
+                    as={ Link }
+                    href={ `/assets/${ asset.symbol }?wallet_id=${ wallet_id }` }
+                  >
+                    Comprar/vender
+                  </Button>
                 </TableCell>
               </TableRow>
             ))}

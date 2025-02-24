@@ -1,5 +1,10 @@
+'use client';
+
 import { Button, Label, TextInput } from "flowbite-react";
-import { Asset, OrderType } from "../models";
+import { FormEvent } from 'react';
+import { socket } from "../socket-io";
+import { toast } from "react-toastify";
+import { Asset, Order, OrderType } from '../models';
 
 export function OrderForm(props: {
   asset: Asset;
@@ -8,6 +13,18 @@ export function OrderForm(props: {
 }) {
   const color = props.type == OrderType.BUY ? "text-blue-700" : "text-red-700";
   const translatedType = props.type == OrderType.BUY ? "compra" : "venda";
+
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+    socket.connect();
+    const newOrder: Order = await socket.emitWithAck("orders/create", data);
+    toast(
+      `Ordem de ${translatedType} de ${newOrder.shares} ações de ${props.asset.symbol} criada com sucesso`,
+      { type: "success", position: "top-right" }
+    );
+  }
 
   return (
     <form>
