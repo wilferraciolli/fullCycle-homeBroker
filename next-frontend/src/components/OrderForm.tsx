@@ -27,7 +27,7 @@ export function OrderForm(props: {
   }
 
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <input type="hidden" name="assetId" defaultValue={props.asset._id} />
       <input type="hidden" name="walletId" defaultValue={props.walletId} />
       <input type="hidden" name="type" defaultValue={props.type} />
