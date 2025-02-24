@@ -54,8 +54,3 @@ export class AssetsService {
   }
 }
 
-// TODO stopped lesson 3 1 hour
-// TODO stopped lesson 3 1 hour
-// TODO stopped lesson 3 1 hour
-// TODO stopped lesson 3 1 hour
-// TODO stopped lesson 3 1 hour

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { AssetShow } from '../components/AssetShow';
 import { WalletList } from '../components/WalletList';
 import { getMyWallet } from '../queries/queries';
+import {AssetsSync} from "@/components/AssetSync";
 
 export default async function MyWalletListPage({
                                                  searchParams
@@ -56,6 +57,7 @@ export default async function MyWalletListPage({
           </TableBody>
         </Table>
       </div>
+      <AssetsSync assetsSymbols={wallet.assets.map(walletAsset => walletAsset.asset.symbol)}/>
     </div>
   );
 }

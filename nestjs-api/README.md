@@ -6,7 +6,7 @@ API used to manager the rest endpoints to the app. It will use Mongo DB as datab
 
 
 # Prereqs
-To have install nest JS on the machine
+To have install nest JS on the machine `npm install -g @nestjs/cli`
 To add the `"esModuleInterop": true` property to tsconfig.json file
 
 # Database has the following tables
