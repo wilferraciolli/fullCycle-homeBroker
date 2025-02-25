@@ -1,18 +1,23 @@
-import {Module} from '@nestjs/common';
-import {AssetsService} from './assets.service';
-import {AssetsController} from './assets.controller';
-import {MongooseModule} from "@nestjs/mongoose";
-import {Asset, AssetSchema} from "./entities/asset.entity";
+import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { AssetsDailiesController } from './asset-dailies.controller';
+import { AssetDailiesService } from './asset-dailies.service';
+import { AssetsController } from './assets.controller';
 import { AssetsGateway } from './assets.gateway';
+import { AssetsService } from './assets.service';
+import { AssetDaily, AssetDailySchema } from './entities/asset-daily.entity';
+import { Asset, AssetSchema } from './entities/asset.entity';
+
 
 @Module({
-    imports: [
-        MongooseModule.forFeature([
-            {name: Asset.name, schema: AssetSchema},
-        ])
-    ],
-    controllers: [AssetsController],
-    providers: [AssetsService, AssetsGateway],
+  imports: [
+    MongooseModule.forFeature([
+      { name: Asset.name, schema: AssetSchema },
+      { name: AssetDaily.name, schema: AssetDailySchema }
+    ])
+  ],
+  controllers: [AssetsController, AssetsDailiesController],
+  providers: [AssetsService, AssetsGateway, AssetDailiesService]
 })
 export class AssetsModule {
 }

@@ -1,34 +1,25 @@
-import {
-  Button,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeadCell,
-  TableRow,
-} from "flowbite-react";
-import Link from 'next/link';
-import { AssetShow } from "../../components/AssetShow";
-import { WalletList } from "../../components/WalletList";
-import { getAssets, getMyWallet } from "../../queries/queries";
-
+import { TableAssetRow } from '@/app/assets/TableAssetRow';
+import { AssetsSync } from '@/components/AssetSync';
+import { Table, TableBody, TableHead, TableHeadCell } from 'flowbite-react';
+import { WalletList } from '../../components/WalletList';
+import { getAssets, getMyWallet } from '../../queries/queries';
 
 
 export default async function AssetsListPage({
-                                               searchParams,
+                                               searchParams
                                              }: {
   searchParams: Promise<{ wallet_id: string }>;
 }) {
   const { wallet_id } = await searchParams;
 
   if (!wallet_id) {
-    return <WalletList />;
+    return <WalletList/>;
   }
 
   const wallet = await getMyWallet(wallet_id);
 
   if (!wallet) {
-    return <WalletList />;
+    return <WalletList/>;
   }
 
   const assets = await getAssets();
@@ -46,27 +37,15 @@ export default async function AssetsListPage({
             <TableHeadCell>Comprar/vender</TableHeadCell>
           </TableHead>
           <TableBody>
-            {assets.map((asset, key) => (
-              <TableRow key={key}>
-                <TableCell>
-                  <AssetShow asset={asset} />
-                </TableCell>
-                <TableCell>R$ {asset.price}</TableCell>
-                <TableCell>
-                  <Button
-                    className="w-fit"
-                    color="light"
-                    as={ Link }
-                    href={ `/assets/${ asset.symbol }?wallet_id=${ wallet_id }` }
-                  >
-                    Comprar/vender
-                  </Button>
-                </TableCell>
-              </TableRow>
-            ))}
+            { assets.map((asset, key) => (
+              <TableAssetRow key={ key }
+                             asset={ asset }
+                             walletId={ wallet_id }/>
+            )) }
           </TableBody>
         </Table>
       </div>
+      <AssetsSync assetsSymbols={ assets.map(asset => asset.symbol) }/>
     </div>
   );
 }

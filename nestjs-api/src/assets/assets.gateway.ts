@@ -7,7 +7,7 @@ import { AssetsService } from './assets.service';
 import { Server } from 'socket.io';
 import { Logger } from '@nestjs/common';
 import { AssetPresenter } from './asset.presenter';
-import { AssetDailiesService } from './asset-dalies.service';
+import { AssetDailiesService } from './asset-dailies.service';
 import { AssetDailyPresenter } from './asset-daily.presenter';
 
 @WebSocketGateway({ cors: true })

@@ -123,3 +123,8 @@ export default function RootLayout({
 
 ```
 
+### Zustand - user state
+This is the smalles state library to be used within React, it allows reactivity without needing to refresh the whole component.
+```bash
+npm install zustand
+```

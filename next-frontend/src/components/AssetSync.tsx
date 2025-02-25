@@ -26,10 +26,3 @@ export function AssetsSync(props: { assetsSymbols: string[] }) {
 
   return null;
 }
-
-
-// TODO stopped lesson 3 1:27 hour
-// TODO stopped lesson 3 1:27 hour
-// TODO stopped lesson 3 1:27 hour
-// TODO stopped lesson 3 1:27 hour
-// TODO stopped lesson 3 1:27 hour
