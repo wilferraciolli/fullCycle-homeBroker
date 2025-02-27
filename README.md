@@ -25,5 +25,9 @@ To connect to the database, follow this connection string
 
 # Communication
 The servers will communicate via websockets to show data in real time as well as MongoDB stream
-[websockets.png](images/05-websockets.png)
-[mongoStream.png](images/06-mongoDBStream.png)
+![websockets.png](images/05-websockets.png)
+![mongoStream.png](images/06-mongoDBStream.png)
+
+## Messaging
+Apache kafka was used to send messages between servers
+![kafka.png](images/07-kafka.png)
