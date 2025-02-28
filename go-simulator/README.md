@@ -20,6 +20,34 @@ on the terminal type in
   go run cmd/trade/main.go
 ```
 
+### Run the project on a single docker compose file
+The project was set up to run within a single dockercomponse file on the root project, all that it does is to import the inner docker composes and run all together, although it is still necessary to docker compose onto the containers and execute the servers.
+
+GoLang 
+```bash 
+  docker compose exec -it golang sh
+```
+Then to run the app type in
+```
+  go run cmd/trade/main.go
+```
+
+NestJS 
+```bash 
+  docker compose exec nest bash
+```
+then within nestJs  there are a few commands to run
+```
+  npm run start:dev
+  npm run assets-image
+  npm command...... see readme
+```
+
+#NextJS
+```bash 
+  docker compose exec next bash
+```
+
 ## Kafka admin
 It uses the control-center docker image to manage kafka topics, run the docker compose then on the browser go to 
 `localhost:9021`
