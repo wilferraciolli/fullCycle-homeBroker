@@ -17,19 +17,21 @@
 ### Run the project
 on the terminal type in
 ```bash
-go run cmd/trade/main.go
+  go run cmd/trade/main.go
 ```
 
 ## Kafka admin
 It uses the control-center docker image to manage kafka topics, run the docker compose then on the browser go to 
 `localhost:9021`
 ## Kafka topics
-Using kafkas control center admin, create the 2 topics this application uses `orders` and `processed_orders`
+Using kafka's control center admin, create the 2 topics this application uses `orders` and `processed_orders`
 
 ## Dependencies
 ### Google - UUID
 ### Confluentinc - Apache kafka 
 
-
+// TODO stoped lessioon 5 56:00
+// TODO stoped lessioon 5 56:00
+// TODO stoped lessioon 5 56:00
 
 

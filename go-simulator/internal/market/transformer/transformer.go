@@ -1,8 +1,8 @@
 package transformer
 
 import (
-	"github.com/devfullcycle/imersao21/go/internal/market/dto"
-	"github.com/devfullcycle/imersao21/go/internal/market/entity"
+	"github.com/wilferraciolli/fullCycle-homeBroker/go-simulator/internal/market/dto"
+	"github.com/wilferraciolli/fullCycle-homeBroker/go-simulator/internal/market/entity"
 )
 
 func TransformInput(input dto.TradeInput) *entity.Order {

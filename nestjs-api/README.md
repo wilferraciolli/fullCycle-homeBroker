@@ -37,6 +37,12 @@ It is possible to run a npx command to create a lightweight server to run a fold
 npx serve -l tcp://127.0.0.1:9001 ./assets
 ```
 
+## Kafka on its own
+within the terminal type in 
+```bash
+  npm run start:dev -- --entryFile _cmd/kafka.cmd
+```
+
 ## Websockets
 Each class annotated with @WebSocketGateway() is a websocket server, it can be tested simply by using Postman socket.io to test
 Eg Websocket connection to `ws://localhost:3000` with a payload, then add the message name to the `Ack` field in postman to map which 
@@ -95,11 +101,22 @@ export class AssetsModule {
 ## Dependencies
 ### mongoose
 ```bash
-  npm install @nestjs/mongoose mongoose
+    npm install @nestjs/mongoose mongoose
 ```
 
 ### web sockets io
 Install sockets io to use websockets
 ```bash
-npm install @nestjs/websockets @nestjs/platform-socket.io 
+  npm install @nestjs/websockets @nestjs/platform-socket.io 
+```
+
+### Kafka
+Kafka new library to use with nest js
+```bash
+    npm install @confluentinc/kafka-javascript
+```
+
+### microservices
+```bash
+  npm install @nestjs/microservices  
 ```
