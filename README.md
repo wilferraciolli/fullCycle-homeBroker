@@ -31,3 +31,7 @@ The servers will communicate via websockets to show data in real time as well as
 ## Messaging
 Apache kafka was used to send messages between servers
 ![kafka.png](images/07-kafka.png)
+
+
+# improvements
+![08-improvements.png](images/08-improvements.png)

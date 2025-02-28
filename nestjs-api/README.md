@@ -43,6 +43,15 @@ within the terminal type in
   npm run start:dev -- --entryFile _cmd/kafka.cmd
 ```
 
+## Command to simulate trade (requires nest commander dependency)
+This is a nest JS feature to be able to run a command, used to simulate trading between users just to test the data.
+this is an interactive tool which will create assets, create wallets and so on... Please wipe the database before running it.
+```bash
+  npm run command simulate-assets-price   
+```
+Once ran, it should ask you if you want to simulate users, it should look like this
+![commander to simulate trading](images/04-commander.png)
+
 ## Websockets
 Each class annotated with @WebSocketGateway() is a websocket server, it can be tested simply by using Postman socket.io to test
 Eg Websocket connection to `ws://localhost:3000` with a payload, then add the message name to the `Ack` field in postman to map which 
@@ -120,3 +129,11 @@ Kafka new library to use with nest js
 ```bash
   npm install @nestjs/microservices  
 ```
+
+### nest commander helper tool
+This is a tool that allows to run code within the CLI, in case of this project, it is used to simulate a days worth of trading.
+See the command above as it is interactive
+```bash
+  npm install nest-commander
+```
+

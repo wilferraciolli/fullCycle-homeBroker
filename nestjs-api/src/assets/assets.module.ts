@@ -17,7 +17,8 @@ import { Asset, AssetSchema } from './entities/asset.entity';
     ])
   ],
   controllers: [AssetsController, AssetsDailiesController],
-  providers: [AssetsService, AssetsGateway, AssetDailiesService]
+  providers: [AssetsService, AssetsGateway, AssetDailiesService],
+  exports:[AssetsService]
 })
 export class AssetsModule {
 }

@@ -1,3 +1,5 @@
+import { AssetPrice } from '@/app/assets/[assetSymbol]/AssetPrice';
+import { AssetsSync } from '@/components/AssetSync';
 import { Card, Tabs } from "flowbite-react";
 import { Time } from 'lightweight-charts';
 import { AssetShow } from "../../../components/AssetShow";
@@ -45,6 +47,7 @@ export default async function AssetDashboard({
       <div className="flex flex-col space-y-2">
         <AssetShow asset={asset} />
         <div className="ml-2 font-bold text-2xl">R$ {asset.price}</div>
+        <AssetPrice asset={asset} />
       </div>
       <div className="grid grid-cols-5 flex-grow gap-2">
         <div className="col-span-2">
@@ -74,6 +77,7 @@ export default async function AssetDashboard({
           <AssetChartComponent asset={asset} data={chartData} />
         </div>
       </div>
+      <AssetsSync assetsSymbols={[asset.symbol]}/>
     </div>
   );
 }
